@@ -15,19 +15,22 @@
   <body>
     <section id="assignment">
       <!-- 1) Output your name -->
-      <h2>YOUR NAME</h2>
+      <h2>{{ name }}</h2>
       <!-- 2) Output your age -->
-      <p>YOUR AGE</p>
+      <p>{{ age }}</p>
       <!-- 3) Output your age + 5 -->
-      <p>YOUR AGE in 5 years</p>
+      <p>{{ setAgeInFiveYears() }}</p>
       <!-- 4) Output a random number (0 to 1) -->
-      <p>Favorite Number: RANDOM NUMBER BETWEEN 0 AND 1</p>
+      <p>{{ setRandomNumber() }}</p>
       <div>
         <!-- 5) Display some image you found via Google -->
-        <img src="SOME IMAGE URL" />
+        <img width = "150" height="150" :src="sampleImage" /> <!--:src is equal to v-bind:src -->
       </div>
       <!-- 6) Prepopulate the input field with your name via the "value" attribute -->
-      <input type="text" />
-    </section>
+      <h4>Enter Your Name</h3>
+      <input type="text" @keyup.enter="saveName" v-model="enteredName" />      
+      <h4>Enter Your Age</h3>
+       <input type="text" @keyup.enter="saveAge" v-model="enteredAge" />        
+    </section>    
   </body>
 </html>
